@@ -1,0 +1,26 @@
+version: 2
+
+# Try using these source definitions instead!
+sources:
+  - name: synthea
+    schema: "{{ target.schema }}_raw"
+    description: Synthetic healthcare data rom the Synthea project
+    tables:
+      - name: raw_encounters
+        description: One record per provider-patient encounter
+        config:
+          loaded_at_field: STOP_TS
+      - name: raw_patients
+        description: One record per patient       
+      - name: raw_conditions
+        description: one record per encounter per condition per patient
+      - name: raw_observations
+        description: One record per observation, ie. test result per patient
+        config:
+          loaded_at_field: date
+      - name: raw_providers
+        description: One record per provider
+      - name: raw_organizations
+        description: One record per organization
+      - name: raw_payers
+        description: One record per payer 
