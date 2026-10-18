@@ -1,0 +1,23 @@
+  models:
+  - name: stg_encounters
+    description: "Encounters data with basic cleaning and transformation applied, one row per encounter."
+    columns:
+      - name: encounter_id
+        description: The unique key for each encounter.
+        data_tests:
+          - not_null
+          - unique  
+      - name: patient_id
+        description: The unique key for each patient.
+        data_tests:
+          - not_null
+      - name: organization_id
+        description: The unique key for each provider organization.
+      - name: provider_id
+        description: The unique key for each provider.
+        data_tests:
+          - not_null
+      - name: payer_id
+        description: The unique key for each payer.
+        data_tests:
+          - not_null
