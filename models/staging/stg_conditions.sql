@@ -4,7 +4,7 @@ with source as (
 ),
 renamed as (
 	select 
-        {{dbt_utils.generate_surrogate_key(['encounter','code'])}} as condition_id,
+        {{dbt_utils.generate_surrogate_key(['encounter','patient','code'])}} as condition_id,
         start_dt as start_dt,
         stop_dt as stop_dt,
         patient as patient_id,

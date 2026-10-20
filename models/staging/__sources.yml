@@ -1,6 +1,6 @@
 version: 2
 
-# Try using these source definitions instead!
+
 sources:
   - name: synthea
     schema: "{{ target.schema }}_raw"
@@ -13,9 +13,9 @@ sources:
       - name: raw_patients
         description: One record per patient       
       - name: raw_conditions
-        description: one record per encounter per condition per patient
+        description: one record per encounter, patient, condition code
       - name: raw_observations
-        description: One record per observation, ie. test result per patient
+        description: One record per date, encounter, patient,code, value
         config:
           loaded_at_field: date
       - name: raw_providers

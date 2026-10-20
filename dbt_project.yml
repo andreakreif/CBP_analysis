@@ -1,5 +1,4 @@
 name: CBP_analysis
-
 profile: cbp_analysis
 
 seed-paths: ["seeds"]
@@ -11,8 +10,8 @@ clean-targets:
 
 seeds:
   # Builds seeds into '<your_schema_name>_raw'
-  cbp_analysis:
-    +schema: raw
+  +schema: "{{ target.schema }}_raw"
+  +database: "{{ target.database }}"
 
 models:
   cbp_analysis:
