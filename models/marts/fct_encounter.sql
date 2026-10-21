@@ -1,6 +1,6 @@
 SELECT encounter_id, 
     TO_CHAR(start_ts, 'YYYYMMDD')::INT  AS encounter_date_key, 
-    encounter_type_key
+    encounter_type_key,     
     patient_id, 
     provider_id, 
     organization_id,
@@ -10,5 +10,5 @@ SELECT encounter_id,
     reason_code,
     reason_description
 FROM {{ ref('stg_encounters') }}
-JOIN {{ ref('dim_encounter_type') }} 
+LEFT JOIN {{ ref('dim_encounter_type') }} 
 USING(encounter_class, encounter_code, encounter_description)
