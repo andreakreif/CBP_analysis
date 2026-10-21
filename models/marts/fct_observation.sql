@@ -3,7 +3,7 @@ SELECT observation_id,
     encounter_id, 
     CASE WHEN observation_type = 'numeric' THEN observation_value
          ELSE NULL END AS observation_value_numeric,
-    CASE WHEN observation_type = 'text' THEN observation_text_value
+    CASE WHEN observation_type = 'text' THEN observation_value
          ELSE NULL END AS observation_value_text,
     observation_units
     observation_type,
