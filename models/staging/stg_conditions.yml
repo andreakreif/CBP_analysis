@@ -11,7 +11,13 @@ models:
         description: The unique key for stg_patients.
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg_patients')
+              field: patient_id
       - name: encounter_id
         description: The unique key for stg_encounters.
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg_encounters')
+              field: encounter_id

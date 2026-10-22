@@ -7,3 +7,10 @@ models:
         data_tests:
           - not_null
           - unique
+      - name: organization_id
+        description: primary key for provider organization table 
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_organizations')
+              field: organization_id
